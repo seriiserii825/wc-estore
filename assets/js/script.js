@@ -43,7 +43,7 @@
 			width: 'auto', //auto or any width like 600px
 			fit: true   // 100% fit in a container
 		});
-		$('#myModal88').modal('show');
+		// $('#myModal88').modal('show');
 
 		/* ---- Countdown timer ---- */
 
