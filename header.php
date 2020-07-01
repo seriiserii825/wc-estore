@@ -18,7 +18,7 @@
     <!-- //web fonts -->
 	<?php wp_head(); ?>
 </head>
-<body>
+<body <?php body_class(); ?>>
 <!-- header -->
 <div class="header" id="home1">
     <div class="container">
