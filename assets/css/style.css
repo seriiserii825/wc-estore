@@ -4996,3 +4996,12 @@ td.invert-image a img {
 .woocommerce-form-login__rememberme {
 	display: block;
 }
+.w3l_logo span {
+	display: block;
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+.w3l_logo span:last-of-type {
+	font-size: 14px;
+}
