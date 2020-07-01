@@ -1486,6 +1486,8 @@ div#horizontalTab ul {
 ::-webkit-input-placeholder{
 	color:#212121 !important;
 }
+
+.register button[type="submit"],
 .register input[type="submit"]{
 	outline:none;
 	border:none;
@@ -1497,6 +1499,8 @@ div#horizontalTab ul {
 	text-transform:uppercase;
 	margin:2em 0 0;
 }
+
+.register button[type="submit"]:hover,
 .register input[type="submit"]:hover{
 	background:#3c43a4;
 }
@@ -4988,4 +4992,7 @@ td.invert-image a img {
 	.w3l_faq_grid {
 		margin-bottom: 1em;
 	}
+}
+.woocommerce-form-login__rememberme {
+	display: block;
 }

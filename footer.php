@@ -137,32 +137,23 @@
                                 <div class="tab-1 resp-tab-content" aria-labelledby="tab_item-0">
                                     <div class="facts">
                                         <div class="register">
-                                            <form action="#" method="post">
-                                                <input name="Email" placeholder="Email Address" type="text" required="">
-                                                <input name="Password" placeholder="Password" type="password"
-                                                       required="">
-                                                <div class="sign-up">
-                                                    <input type="submit" value="Sign in"/>
-                                                </div>
-                                            </form>
+                                            <?php wc_get_template_part('includes/form/wc-form-login'); ?>
+                                            <!--<form action="#" method="post">-->
+                                            <!--    <input name="Email" placeholder="Email Address" type="text" required="">-->
+                                            <!--    <input name="Password" placeholder="Password" type="password"-->
+                                            <!--           required="">-->
+                                            <!--    <div class="sign-up">-->
+                                            <!--        <input type="submit" value="Sign in"/>-->
+                                            <!--    </div>-->
+                                            <!--</form>-->
+                                            <!---->
                                         </div>
                                     </div>
                                 </div>
                                 <div class="tab-2 resp-tab-content" aria-labelledby="tab_item-1">
                                     <div class="facts">
                                         <div class="register">
-                                            <form action="#" method="post">
-                                                <input placeholder="Name" name="Name" type="text" required="">
-                                                <input placeholder="Email Address" name="Email" type="email"
-                                                       required="">
-                                                <input placeholder="Password" name="Password" type="password"
-                                                       required="">
-                                                <input placeholder="Confirm Password" name="Password" type="password"
-                                                       required="">
-                                                <div class="sign-up">
-                                                    <input type="submit" value="Create Account"/>
-                                                </div>
-                                            </form>
+	                                        <?php wc_get_template_part( 'includes/form/wc-form-register' ); ?>
                                         </div>
                                     </div>
                                 </div>
