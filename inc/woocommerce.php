@@ -6,16 +6,6 @@
  *
  * @package wc-estore
  */
-
-/**
- * WooCommerce setup function.
- *
- * @link https://docs.woocommerce.com/document/third-party-custom-theme-compatibility/
- * @link https://github.com/woocommerce/woocommerce/wiki/Enabling-product-gallery-features-(zoom,-swipe,-lightbox)
- * @link https://github.com/woocommerce/woocommerce/wiki/Declaring-WooCommerce-support-in-themes
- *
- * @return void
- */
 function wc_estore_woocommerce_setup() {
 	add_theme_support(
 		'woocommerce',
@@ -61,22 +51,14 @@ function wc_estore_woocommerce_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'wc_estore_woocommerce_scripts' );
 
-/**
- * Disable the default WooCommerce stylesheet.
- *
- * Removing the default WooCommerce stylesheet and enqueing your own will
- * protect you during WooCommerce core updates.
- *
- * @link https://docs.woocommerce.com/document/disable-the-default-stylesheet/
- */
-add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
+add_filter( 'woocommerce_enqueue_styles', 'remove_woocommerce_styles' );
+function remove_woocommerce_styles($enque_styles){
+//    unset($enque_styles['woocommerce-general']);
+	unset($enque_styles['woocommerce-layout']);
+	unset($enque_styles['woocommerce-smallscreen']);
+	return $enque_styles;
+}
 
-/**
- * Add 'woocommerce-active' class to the body tag.
- *
- * @param  array $classes CSS classes applied to the body tag.
- * @return array $classes modified to include 'woocommerce-active' class.
- */
 function wc_estore_woocommerce_active_body_class( $classes ) {
 	$classes[] = 'woocommerce-active';
 
@@ -84,12 +66,6 @@ function wc_estore_woocommerce_active_body_class( $classes ) {
 }
 add_filter( 'body_class', 'wc_estore_woocommerce_active_body_class' );
 
-/**
- * Related Products Args.
- *
- * @param array $args related products args.
- * @return array $args related products args.
- */
 function wc_estore_woocommerce_related_products_args( $args ) {
 	$defaults = array(
 		'posts_per_page' => 3,
