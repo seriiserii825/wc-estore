@@ -22,64 +22,7 @@
 <!-- header -->
 <div class="header" id="home1">
     <div class="container">
-        <div class="w3l_login">
-            <a href="#" data-toggle="modal" data-target="#myModal88">
-                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-            </a>
-        </div>
-        <div class="w3l_logo">
-			<?php
-			$logo          = get_field( 'logo', 'option' );
-			$logo_select   = $logo['logo_select'] ? $logo['logo_select'] : '';
-			$logo_image    = $logo['logo_image'] ? $logo['logo_image'] : '';
-			$logo_title    = $logo['logo_title'] ? $logo['logo_title'] : '';
-			$logo_subtitle = $logo['logo_subtitle'] ? $logo['logo_subtitle'] : '';
-			?>
-
-			<?php if ( is_front_page() ): ?>
-				<?php if ( $logo_select === 'Choose text' ): ?>
-                    <h1>
-                        <span><?php echo $logo_title; ?></span>
-                        <span><?php echo $logo_subtitle; ?></span>
-                    </h1>
-				<?php else: ?>
-                    <h1>
-                        <img src="<?php echo $logo_image; ?>" width="300" alt="">
-                    </h1>
-				<?php endif; ?>
-			<?php else: ?>
-				<?php if ( $logo_select === 'Choose text' ): ?>
-                    <h1>
-                        <a href="<?php echo home_url(); ?>">
-                            <span><?php echo $logo_title; ?></span>
-                            <span><?php echo $logo_subtitle; ?></span>
-                        </a>
-                    </h1>
-				<?php else: ?>
-                    <h1>
-                        <a href="<?php echo home_url(); ?>">
-                            <img src="<?php echo $logo_image; ?>" width="300" alt="">
-                        </a>
-                    </h1>
-				<?php endif; ?>
-			<?php endif; ?>
-        </div>
-        <div class="search">
-            <input class="search_box" type="checkbox" id="search_box">
-            <label class="icon-search" for="search_box">
-                <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-            </label>
-            <div class="search_form">
-                <form action="<?php esc_url( home_url( '/' ) ); ?>" method="POST">
-                    <input type="text" name="s" value="<?php get_search_query(); ?>" placeholder="Search...">
-                    <input type="submit" value="Send">
-                </form>
-                <div class="search-result"></div>
-            </div>
-        </div>
-        <div class="cart cart box_1">
-            <?php wc_estore_woocommerce_cart_link(); ?>
-        </div>
+        <?php do_action('header-parts'); ?>
     </div>
 </div>
 <!-- //header -->
