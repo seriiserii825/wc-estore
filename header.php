@@ -22,7 +22,7 @@
 <!-- header -->
 <div class="header" id="home1">
     <div class="container">
-        <?php do_action('header-parts'); ?>
+		<?php do_action( 'header-parts' ); ?>
     </div>
 </div>
 <!-- //header -->
@@ -41,26 +41,27 @@
                 </button>
             </div>
             <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
-                <?php wp_nav_menu( [
-                	'theme_location'  => '',
-                	'menu'            => 'menu-1',
-                	'container'       => '',
-                	'container_class' => '',
-                	'container_id'    => '',
-                	'menu_class'      => 'nav navbar-nav',
-                	'menu_id'         => '',
-                	'echo'            => true,
-                	'fallback_cb'     => 'wp_page_menu',
-                	'before'          => '',
-                	'after'           => '',
-                	'link_before'     => '',
-                	'link_after'      => '',
-                	'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-                	'depth'           => 0,
-                	'walker'          => new Estore_Walker,
-                ] ); ?>
+				<?php wp_nav_menu( [
+					'theme_location'  => '',
+					'menu'            => 'menu-1',
+					'container'       => '',
+					'container_class' => '',
+					'container_id'    => '',
+					'menu_class'      => 'nav navbar-nav',
+					'menu_id'         => '',
+					'echo'            => true,
+					'fallback_cb'     => 'wp_page_menu',
+					'before'          => '',
+					'after'           => '',
+					'link_before'     => '',
+					'link_after'      => '',
+					'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+					'depth'           => 0,
+					'walker'          => new Estore_Walker,
+				] ); ?>
             </div>
         </nav>
     </div>
 </div>
+
 <!-- //navigation -->
