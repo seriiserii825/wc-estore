@@ -9,7 +9,7 @@ require_once __DIR__ . '/inc/bs-setup.php';
 require_once __DIR__ . '/inc/bs-widgets.php';
 require_once __DIR__ . '/inc/bs-styles.php';
 require_once __DIR__ . '/inc/bs-settings.php';
-
+require_once __DIR__ . '/inc/navigation.php';
 add_action( 'wp_ajax_myaction', 'esp_search_ajax_action_callback' );
 add_action( 'wp_ajax_nopriv_myaction', 'esp_search_ajax_action_callback' );
 function esp_search_ajax_action_callback() {

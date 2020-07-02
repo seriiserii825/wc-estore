@@ -100,7 +100,7 @@ label.icon-search {
 
 .search_form {
 	position: absolute;
-	z-index: 9999;
+	z-index: -1;
 	right: 0;
 	top: 15px;
 	opacity: 0;
@@ -114,9 +114,8 @@ label.icon-search {
 	position: absolute;
 	top: 60px;
 	left: 0;
-	padding: 10px;
+	padding: 0 10px;
 	width: 100%;
-	min-height: 60px;
 	font-size: 16px;
 	color: #fff;
 	z-index: 1000000;
@@ -178,6 +177,7 @@ label.icon-search {
 	top: 44px;
 	transition: height 0.2s ease-out, top 0.2s ease-out, padding 0.2s ease-out, 0.3s width ease-out 0.2s;
 	-webkit-transition: height 0.2s ease-out, top 0.2s ease-out, padding 0.2s ease-out, 0.3s width ease-out 0.2s;
+	z-index: 101;
 }
 
 .search_box:checked ~ .search_form form {
@@ -234,6 +234,7 @@ a.simpleCart_empty {
 }
 
 .w3view-cart {
+	padding: 10px;
 	background: #ff5063;
 	border: none;
 	-o-border-radius: 7%;
@@ -241,8 +242,6 @@ a.simpleCart_empty {
 	-moz-border-radius: 7%;
 	-webkit-border-radius: 7%;
 	border-radius: 7%;
-	width: 50px;
-	height: 44px;
 	text-align: center;
 	outline: none;
 	position: fixed;
@@ -6183,4 +6182,21 @@ td.invert-image a img {
 
 .w3l_logo span:last-of-type {
 	font-size: 14px;
+}
+
+.w3view-cart {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.w3view-cart a {
+	color: white;
+}
+
+.w3view-cart .count {
+	margin-right: 4px;
+	font-size: 10px;
+	font-weight: bold;
+	color: white;
 }

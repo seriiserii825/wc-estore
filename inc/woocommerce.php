@@ -7,26 +7,22 @@
  * @package wc-estore
  */
 function wc_estore_woocommerce_setup() {
-	add_theme_support(
-		'woocommerce',
-		array(
-			'thumbnail_image_width' => 150,
-			'single_image_width'    => 300,
-			'product_grid'          => array(
-				'default_rows'    => 3,
-				'min_rows'        => 1,
-				'default_columns' => 4,
-				'min_columns'     => 1,
-				'max_columns'     => 6,
-			),
-		)
-	);
+	add_theme_support( 'woocommerce', array(
+		'thumbnail_image_width' => 150,
+		'single_image_width'    => 300,
+		'product_grid'          => array(
+			'default_rows'    => 3,
+			'min_rows'        => 1,
+			'default_columns' => 4,
+			'min_columns'     => 1,
+			'max_columns'     => 6,
+		),
+	) );
 	add_theme_support( 'wc-product-gallery-zoom' );
 	add_theme_support( 'wc-product-gallery-lightbox' );
 	add_theme_support( 'wc-product-gallery-slider' );
 }
 add_action( 'after_setup_theme', 'wc_estore_woocommerce_setup' );
-
 /**
  * WooCommerce specific scripts & stylesheets.
  *
@@ -34,7 +30,6 @@ add_action( 'after_setup_theme', 'wc_estore_woocommerce_setup' );
  */
 function wc_estore_woocommerce_scripts() {
 	wp_enqueue_style( 'wc-estore-woocommerce-style', get_template_directory_uri() . '/woocommerce.css', array(), _S_VERSION );
-
 	$font_path   = WC()->plugin_url() . '/assets/fonts/';
 	$inline_font = '@font-face {
 			font-family: "star";
@@ -46,44 +41,35 @@ function wc_estore_woocommerce_scripts() {
 			font-weight: normal;
 			font-style: normal;
 		}';
-
 	wp_add_inline_style( 'wc-estore-woocommerce-style', $inline_font );
 }
 add_action( 'wp_enqueue_scripts', 'wc_estore_woocommerce_scripts' );
-
 add_filter( 'woocommerce_enqueue_styles', 'remove_woocommerce_styles' );
-function remove_woocommerce_styles($enque_styles){
-//    unset($enque_styles['woocommerce-general']);
-	unset($enque_styles['woocommerce-layout']);
-	unset($enque_styles['woocommerce-smallscreen']);
+function remove_woocommerce_styles( $enque_styles ) {
+	//    unset($enque_styles['woocommerce-general']);
+	unset( $enque_styles['woocommerce-layout'] );
+	unset( $enque_styles['woocommerce-smallscreen'] );
 	return $enque_styles;
 }
-
 function wc_estore_woocommerce_active_body_class( $classes ) {
 	$classes[] = 'woocommerce-active';
-
 	return $classes;
 }
 add_filter( 'body_class', 'wc_estore_woocommerce_active_body_class' );
-
 function wc_estore_woocommerce_related_products_args( $args ) {
 	$defaults = array(
 		'posts_per_page' => 3,
 		'columns'        => 3,
 	);
-
-	$args = wp_parse_args( $defaults, $args );
-
+	$args     = wp_parse_args( $defaults, $args );
 	return $args;
 }
 add_filter( 'woocommerce_output_related_products_args', 'wc_estore_woocommerce_related_products_args' );
-
 /**
  * Remove default WooCommerce wrapper.
  */
 remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
 remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
-
 if ( ! function_exists( 'wc_estore_woocommerce_wrapper_before' ) ) {
 	/**
 	 * Before Content.
@@ -94,12 +80,11 @@ if ( ! function_exists( 'wc_estore_woocommerce_wrapper_before' ) ) {
 	 */
 	function wc_estore_woocommerce_wrapper_before() {
 		?>
-			<main id="primary" class="site-main">
+        <main id="primary" class="site-main">
 		<?php
 	}
 }
 add_action( 'woocommerce_before_main_content', 'wc_estore_woocommerce_wrapper_before' );
-
 if ( ! function_exists( 'wc_estore_woocommerce_wrapper_after' ) ) {
 	/**
 	 * After Content.
@@ -110,24 +95,22 @@ if ( ! function_exists( 'wc_estore_woocommerce_wrapper_after' ) ) {
 	 */
 	function wc_estore_woocommerce_wrapper_after() {
 		?>
-			</main><!-- #main -->
+        </main><!-- #main -->
 		<?php
 	}
 }
 add_action( 'woocommerce_after_main_content', 'wc_estore_woocommerce_wrapper_after' );
-
 /**
  * Sample implementation of the WooCommerce Mini Cart.
  *
  * You can add the WooCommerce Mini Cart to header.php like so ...
  *
-	<?php
-		if ( function_exists( 'wc_estore_woocommerce_header_cart' ) ) {
-			wc_estore_woocommerce_header_cart();
-		}
-	?>
+ * <?php
+ * if ( function_exists( 'wc_estore_woocommerce_header_cart' ) ) {
+ * wc_estore_woocommerce_header_cart();
+ * }
+ * ?>
  */
-
 if ( ! function_exists( 'wc_estore_woocommerce_cart_link_fragment' ) ) {
 	/**
 	 * Cart Fragments.
@@ -135,18 +118,17 @@ if ( ! function_exists( 'wc_estore_woocommerce_cart_link_fragment' ) ) {
 	 * Ensure cart contents update when products are added to the cart via AJAX.
 	 *
 	 * @param array $fragments Fragments to refresh via AJAX.
+	 *
 	 * @return array Fragments to refresh via AJAX.
 	 */
 	function wc_estore_woocommerce_cart_link_fragment( $fragments ) {
 		ob_start();
 		wc_estore_woocommerce_cart_link();
 		$fragments['a.cart-contents'] = ob_get_clean();
-
 		return $fragments;
 	}
 }
 add_filter( 'woocommerce_add_to_cart_fragments', 'wc_estore_woocommerce_cart_link_fragment' );
-
 if ( ! function_exists( 'wc_estore_woocommerce_cart_link' ) ) {
 	/**
 	 * Cart Link.
@@ -157,20 +139,20 @@ if ( ! function_exists( 'wc_estore_woocommerce_cart_link' ) ) {
 	 */
 	function wc_estore_woocommerce_cart_link() {
 		?>
-		<a class="cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'wc-estore' ); ?>">
+        <a class="cart-contents w3view-cart" href="<?php echo esc_url( wc_get_cart_url() ); ?>"
+           title="<?php esc_attr_e( 'View your shopping cart', 'wc-estore' ); ?>">
+
 			<?php
-			$item_count_text = sprintf(
-				/* translators: number of items in the mini cart. */
-				_n( '%d item', '%d items', WC()->cart->get_cart_contents_count(), 'wc-estore' ),
-				WC()->cart->get_cart_contents_count()
-			);
+//			$item_count_text = sprintf( /* translators: number of items in the mini cart. */ _n( '%d item', '%d items', WC()->cart->get_cart_contents_count(), 'wc-estore' ), WC()->cart->get_cart_contents_count() );
+			$item_count_number = WC()->cart->get_cart_contents_count();
 			?>
-			<span class="amount"><?php echo wp_kses_data( WC()->cart->get_cart_subtotal() ); ?></span> <span class="count"><?php echo esc_html( $item_count_text ); ?></span>
-		</a>
+            <!--<span class="amount">--><?php //echo wp_kses_data( WC()->cart->get_cart_subtotal() ); ?><!--</span>-->
+            <span class="count"><?php echo $item_count_number; ?></span>
+            <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+        </a>
 		<?php
 	}
 }
-
 if ( ! function_exists( 'wc_estore_woocommerce_header_cart' ) ) {
 	/**
 	 * Display Header Cart.
@@ -184,20 +166,19 @@ if ( ! function_exists( 'wc_estore_woocommerce_header_cart' ) ) {
 			$class = '';
 		}
 		?>
-		<ul id="site-header-cart" class="site-header-cart">
-			<li class="<?php echo esc_attr( $class ); ?>">
+        <ul id="site-header-cart" class="site-header-cart">
+            <li class="<?php echo esc_attr( $class ); ?>">
 				<?php wc_estore_woocommerce_cart_link(); ?>
-			</li>
-			<li>
+            </li>
+            <li>
 				<?php
 				$instance = array(
 					'title' => '',
 				);
-
 				the_widget( 'WC_Widget_Cart', $instance );
 				?>
-			</li>
-		</ul>
+            </li>
+        </ul>
 		<?php
 	}
 }
