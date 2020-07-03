@@ -22,6 +22,7 @@
 <!-- header -->
 <div class="header" id="home1">
     <div class="container">
+<<<<<<< HEAD
         <?php
         /**
          * action header-parts
@@ -32,6 +33,9 @@
          *
          */
         do_action('header-parts'); ?>
+=======
+		<?php do_action( 'header-parts' ); ?>
+>>>>>>> 5d0c5da666629875efa70631dbb0efe083122ce8
     </div>
 </div>
 <!-- //header -->
@@ -50,26 +54,27 @@
                 </button>
             </div>
             <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
-                <?php wp_nav_menu( [
-                	'theme_location'  => '',
-                	'menu'            => 'menu-1',
-                	'container'       => '',
-                	'container_class' => '',
-                	'container_id'    => '',
-                	'menu_class'      => 'nav navbar-nav',
-                	'menu_id'         => '',
-                	'echo'            => true,
-                	'fallback_cb'     => 'wp_page_menu',
-                	'before'          => '',
-                	'after'           => '',
-                	'link_before'     => '',
-                	'link_after'      => '',
-                	'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-                	'depth'           => 0,
-                	'walker'          => new Estore_Walker,
-                ] ); ?>
+				<?php wp_nav_menu( [
+					'theme_location'  => '',
+					'menu'            => 'menu-1',
+					'container'       => '',
+					'container_class' => '',
+					'container_id'    => '',
+					'menu_class'      => 'nav navbar-nav',
+					'menu_id'         => '',
+					'echo'            => true,
+					'fallback_cb'     => 'wp_page_menu',
+					'before'          => '',
+					'after'           => '',
+					'link_before'     => '',
+					'link_after'      => '',
+					'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+					'depth'           => 0,
+					'walker'          => new Estore_Walker,
+				] ); ?>
             </div>
         </nav>
     </div>
 </div>
+
 <!-- //navigation -->

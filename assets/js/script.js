@@ -1,5 +1,6 @@
 (function ($) {
 	$(window).load(function () {
+		// alert('ok');
 		$("#flexiselDemo1").flexisel({
 			visibleItems: 4,
 			animationSpeed: 1000,
@@ -107,7 +108,6 @@
 			}
 		}
 	});
-
 	let showMiniCart = function () {
 		let i = 1;
 		$('.minicart-box').on('click', function (e) {
@@ -117,6 +117,4 @@
 		});
 	};
 	showMiniCart();
-
 })(jQuery);
-
