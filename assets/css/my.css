@@ -46,19 +46,18 @@ input[type=submit], .panel-body ul li a, .checkout-right-basket a, .additional_i
 }
 
 .w3l_logo h1 a {
-  font-size: 1.1em;
-  color: #212121;
+	color: inherit;
   text-decoration: none;
+	transition: all .3s;
 }
 
-.w3l_logo h1 a span {
+.w3l_logo h1 a:hover {
+	color: #3c43a4;
+}
+
+.w3l_logo h1 a span:first-of-type {
   display: block;
-  font-size: 0.3em;
-  text-transform: capitalize;
-  letter-spacing: 7px;
-  padding-left: 4px;
-  text-align: center;
-  margin-top: 0.5em;
+  font-size: 36px;
 }
 
 .w3l_login a {
@@ -6256,6 +6255,7 @@ td.invert-image a img {
   position: fixed;
 	top: 30px;
   right: 170px;
+	z-index: 1000;
 }
 .minicart-box__content {
   position: absolute;
