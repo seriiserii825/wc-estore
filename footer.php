@@ -1,9 +1,13 @@
 <!-- newsletter -->
+<?php
+$newsletter_title = get_field( 'newsletter_title', 'option' );
+$newsletter_text  = get_field( 'newsletter_text', 'option' );
+?>
 <div class="newsletter">
     <div class="container">
         <div class="col-md-6 w3agile_newsletter_left">
-            <h3>Newsletter</h3>
-            <p>Excepteur sint occaecat cupidatat non proident, sunt.</p>
+            <h3><?php echo $newsletter_title; ?></h3>
+            <p><?php echo $newsletter_text; ?></p>
         </div>
         <div class="col-md-6 w3agile_newsletter_right">
             <form action="#" method="post">
@@ -20,63 +24,56 @@
     <div class="container">
         <div class="w3_footer_grids">
             <div class="col-md-3 w3_footer_grid">
-                <h3>Contact</h3>
-                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse.</p>
-                <ul class="address">
-                    <li>
-                        <i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>
-                        1234k Avenue, 4th block,
-                        <span>New York City.</span>
-                    </li>
-                    <li>
-                        <i class="glyphicon glyphicon-envelope" aria-hidden="true"></i>
-                        <a href="mailto:info@example.com">info@example.com</a>
-                    </li>
-                    <li>
-                        <i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>
-                        +1234 567 567
-                    </li>
-                </ul>
+				<?php
+				$contacts_title = get_field( 'conctacts_title', 'option' );
+				$contacts_subtitle = get_field( 'conctacts_subtitle', 'option' );
+				$contacts_text = get_field( 'contacts_text', 'option' );
+				?>
+                <h3><?php echo $contacts_title; ?></h3>
+                <p><?php echo $contacts_subtitle; ?></p>
+	            <?php echo $contacts_text; ?>
             </div>
             <div class="col-md-3 w3_footer_grid">
-                <h3>Information</h3>
-                <ul class="info">
-                    <li>
-                        <a href="about.html">About Us</a>
-                    </li>
-                    <li>
-                        <a href="mail.html">Contact Us</a>
-                    </li>
-                    <li>
-                        <a href="codes.html">Short Codes</a>
-                    </li>
-                    <li>
-                        <a href="faq.html">FAQ's</a>
-                    </li>
-                    <li>
-                        <a href="products.html">Special Products</a>
-                    </li>
-                </ul>
+                <h3><?php echo get_field( 'information_title', 'option' ); ?></h3>
+                <?php wp_nav_menu( [
+                	'theme_location'  => 'menu-footer',
+                	'menu'            => '',
+                	'container'       => '',
+                	'container_class' => '',
+                	'container_id'    => '',
+                	'menu_class'      => 'info',
+                	'menu_id'         => '',
+                	'echo'            => true,
+                	'fallback_cb'     => 'wp_page_menu',
+                	'before'          => '',
+                	'after'           => '',
+                	'link_before'     => '',
+                	'link_after'      => '',
+                	'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                	'depth'           => 0,
+                	'walker'          => '',
+                ] ); ?>
             </div>
             <div class="col-md-3 w3_footer_grid">
-                <h3>Category</h3>
-                <ul class="info">
-                    <li>
-                        <a href="products.html">Mobiles</a>
-                    </li>
-                    <li>
-                        <a href="products1.html">Laptops</a>
-                    </li>
-                    <li>
-                        <a href="products.html">Purifiers</a>
-                    </li>
-                    <li>
-                        <a href="products1.html">Wearables</a>
-                    </li>
-                    <li>
-                        <a href="products2.html">Kitchen</a>
-                    </li>
-                </ul>
+                <h3><?php echo get_field( 'categories_title', 'option' ); ?></h3>
+                <?php wp_nav_menu( [
+                	'theme_location'  => 'menu-categories',
+                	'menu'            => '',
+                	'container'       => '',
+                	'container_class' => '',
+                	'container_id'    => '',
+                	'menu_class'      => 'info',
+                	'menu_id'         => '',
+                	'echo'            => true,
+                	'fallback_cb'     => 'wp_page_menu',
+                	'before'          => '',
+                	'after'           => '',
+                	'link_before'     => '',
+                	'link_after'      => '',
+                	'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                	'depth'           => 0,
+                	'walker'          => '',
+                ] ); ?>
             </div>
             <div class="col-md-3 w3_footer_grid">
                 <h3>Profile</h3>
@@ -154,14 +151,14 @@
                                 <div class="tab-1 resp-tab-content" aria-labelledby="tab_item-0">
                                     <div class="facts">
                                         <div class="register">
-                                            <?php wc_get_template_part('includes/form/wc-form-login'); ?>
+											<?php wc_get_template_part( 'includes/form/wc-form-login' ); ?>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="tab-2 resp-tab-content" aria-labelledby="tab_item-1">
                                     <div class="facts">
                                         <div class="register">
-	                                        <?php wc_get_template_part( 'includes/form/wc-form-register' ); ?>
+											<?php wc_get_template_part( 'includes/form/wc-form-register' ); ?>
                                         </div>
                                     </div>
                                 </div>

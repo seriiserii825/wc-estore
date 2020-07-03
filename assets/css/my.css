@@ -24,6 +24,10 @@ body a:hover {
   text-decoration: none;
 }
 
+.no-br br {
+  display: none;
+}
+
 /*-- header --*/
 input[type=submit], .panel-body ul li a, .checkout-right-basket a, .additional_info_sub_grid_right a, .panel_bottom li a, .panel-title a, .breadcrumb_dress ul li a, .multi-column-dropdown li a, .footer-copy p a, .w3_footer_grid ul li a, .agileinfo_banner_bottom1_grid_left a, .navbar-default .navbar-nav > li > a, .simpleCart_shelfItem p a, .agile_ecommerce_tab_left h5 a, .w3_hs_bottom ul li a, .team-bottom a {
   transition: 0.5s ease-in-out;
@@ -1505,7 +1509,7 @@ ul.wmuSliderPagination {
 
 .w3agile_newsletter_right input[type=submit] {
   outline: none;
-  padding: 9px 0;
+  height: 40px;
   width: 15%;
   background: url(../images/img-sp.png) no-repeat 26px -65px #ff5063;
   border: none;
@@ -1560,11 +1564,6 @@ ul.wmuSliderPagination {
   border: 1px solid #414141;
   padding: 0.5em;
   margin-right: 1em;
-}
-
-.w3_footer_grid ul.address li span {
-  display: block;
-  margin-left: 3em;
 }
 
 .w3_footer_grid ul li a {
@@ -5581,6 +5580,14 @@ td.invert-image a img {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
   background-color: white;
   border-radius: 6px;
+}
+
+.address li {
+  display: flex;
+}
+
+.address li i {
+  margin-right: 10px;
 }
 
 /*# sourceMappingURL=my.css.map */

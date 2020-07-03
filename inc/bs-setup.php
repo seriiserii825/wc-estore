@@ -23,6 +23,8 @@ if ( ! function_exists( 'wc_estore_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
 			'menu-1' => esc_html__( 'Primary', 'wc-estore' ),
+			'menu-footer' => esc_html__( 'Footer', 'wc-estore' ),
+			'menu-categories' => esc_html__( 'Categories', 'wc-estore' ),
 		) );
 		/*
 		 * Switch default core markup for search form, comment form, and comments

@@ -1555,7 +1555,7 @@ ul.wmuSliderPagination {
 
 .w3agile_newsletter_right input[type=submit] {
   outline: none;
-  padding: 9px 0;
+  height: 40px;
   width: 15%;
   background: url(../images/img-sp.png) no-repeat 26px -65px #ff5063;
   border: none;
@@ -1612,11 +1612,6 @@ ul.wmuSliderPagination {
   border: 1px solid #414141;
   padding: 0.5em;
   margin-right: 1em;
-}
-
-.w3_footer_grid ul.address li span {
-  display: block;
-  margin-left: 3em;
 }
 
 .w3_footer_grid ul li a {
@@ -6264,4 +6259,12 @@ td.invert-image a img {
   box-shadow: 0 8px 16px rgba(0, 0, 0, .4);
   background-color: white;
   border-radius: 6px;
+}
+.address {
+  li {
+    display: flex;
+    i {
+      margin-right: 10px;
+    }
+  }
 }
