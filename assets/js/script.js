@@ -99,14 +99,24 @@
 	});
 
 	document.addEventListener('mousedown', function (e) {
-		let  searchBox = document.querySelector('.search_box');
-		if ( searchBox) {
-			console.log(e.target.closest('.search'));
+		let searchBox = document.querySelector('.search_box');
+		if (searchBox) {
 			if (e.target.closest('.search') === null) {
-				 searchBox.checked = false;;
+				searchBox.checked = false;
+				;
 			}
 		}
 	});
+
+	let showMiniCart = function () {
+		let i = 1;
+		$('.minicart-box').on('click', function (e) {
+			e.preventDefault();
+				$('.minicart-box__content').fadeToggle();
+
+		});
+	};
+	showMiniCart();
 
 })(jQuery);
 

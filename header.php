@@ -22,7 +22,16 @@
 <!-- header -->
 <div class="header" id="home1">
     <div class="container">
-        <?php do_action('header-parts'); ?>
+        <?php
+        /**
+         * action header-parts
+         * @hooked estore_login - 10
+         * @hooked estore_logo - 20
+         * @hooked estore_search - 30
+         * @hooked estore_cart - 40
+         *
+         */
+        do_action('header-parts'); ?>
     </div>
 </div>
 <!-- //header -->

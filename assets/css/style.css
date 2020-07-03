@@ -51,19 +51,7 @@ input[type="submit"], .panel-body ul li a, .checkout-right-basket a, .additional
 }
 
 .w3l_logo h1 a {
-	font-size: 1.1em;
-	color: #212121;
-	text-decoration: none;
-}
-
-.w3l_logo h1 a span {
-	display: block;
-	font-size: .3em;
-	text-transform: capitalize;
-	letter-spacing: 7px;
-	padding-left: 4px;
-	text-align: center;
-	margin-top: 0.5em;
+	color: inherit;
 }
 
 .w3l_login a {
@@ -244,7 +232,6 @@ a.simpleCart_empty {
 	border-radius: 7%;
 	text-align: center;
 	outline: none;
-	position: fixed;
 	right: 14%;
 	z-index: 999
 }
@@ -6184,6 +6171,10 @@ td.invert-image a img {
 	font-size: 14px;
 }
 
+.w3l_logo a {
+	text-decoration: none;
+}
+
 .w3view-cart {
 	display: flex;
 	justify-content: center;
@@ -6199,4 +6190,66 @@ td.invert-image a img {
 	font-size: 10px;
 	font-weight: bold;
 	color: white;
+}
+
+.title-search {
+	padding: 10px;
+	transition: all .2s;
+}
+
+.title-search:hover {
+	background-color: #444;
+}
+
+.title-search a {
+	display: block;
+	color: inherit;
+}
+
+.minicart-box {
+	position: relative;
+}
+
+.minicart-box__content {
+	position: absolute;
+	top: 60px;
+	left: 0;
+}
+
+.minicart-box {
+	position: fixed;
+	top: 80px;
+	right: 140px;
+	z-index: 1000;
+}
+
+.minicart-box__content {
+	position: absolute;
+	top: 46px;
+	left: -100px;
+	display: none;
+	padding: 10px 10px 0;
+	width: 240px;
+	background: white;
+	box-shadow: 0 8px 20px 0 rgba(0, 0, 0, .4);
+	border-radius: 8px;
+}
+
+
+
+.w3view-cart {
+	position: relative;
+	text-decoration: none;
+}
+
+.w3view-cart:active,
+.w3view-cart:focus {
+	text-decoration: none;
+}
+.woocommerce-mini-cart-item {
+	transition: all .2s;
+}
+
+.woocommerce-mini-cart-item:hover {
+	background-color: #eee;
 }
