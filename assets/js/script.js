@@ -108,11 +108,22 @@
 		}
 	});
 	let showMiniCart = function () {
-		$('.minicart-box').on('click', '.w3view-cart',  function (e) {
+		$('.minicart-box').on('click', '.w3view-cart', function (e) {
 			e.preventDefault();
 			$('.minicart-box__content').fadeToggle();
 
 		});
 	};
 	showMiniCart();
+
+	let showScrollToUp = function () {
+		$(window).on('scroll', function () {
+			if ($(this).scrollTop() > 1400) {
+				$('.footer-copy-pos').fadeIn(800);
+			} else {
+				$('.footer-copy-pos').fadeOut(800);
+			}
+		});
+	};
+	showScrollToUp();
 })(jQuery);
