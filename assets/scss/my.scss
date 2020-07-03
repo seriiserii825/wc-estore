@@ -735,9 +735,6 @@ li.w3pages .dropdown-menu > li > a:hover {
 
 /*-- //banner --*/
 /*-- banner-bottom --*/
-.banner-bottom, .team, .checkout, .additional_info, .team-bottom, .single, .mail, .special-deals, .about, .faq, .typo, .new-products, .banner-bottom1, .top-brands, .mobiles, .w3l_related_products {
-  padding: 5em 0;
-}
 
 .modal-body iframe {
   width: 100%;
@@ -6266,5 +6263,30 @@ td.invert-image a img {
     i {
       margin-right: 10px;
     }
+  }
+}
+.page-content {
+  padding: 40px 0;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  
+  p {
+    margin-bottom: 10px;
+  }
+  ul {
+    margin-bottom: 30px;
+    li {
+      margin-left: 40px;
+    }
+  }
+  blockquote {
+    margin-bottom: 40px;
   }
 }
