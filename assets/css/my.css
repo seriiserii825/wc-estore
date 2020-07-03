@@ -1,8 +1,8 @@
 html, body {
   font-size: 100%;
-  background: violet;
   font-family: "Open Sans", sans-serif;
-  color: maroon;
+  color: #777;
+  background: white;
 }
 
 p {
@@ -6227,13 +6227,22 @@ td.invert-image a img {
 }
 
 .w3view-cart {
+  position: static;
   display: flex;
   justify-content: center;
   align-items: center;
+  text-decoration: none;
+	transition: all .3s;
+  color: white;
 }
 
-.w3view-cart a {
-  color: white;
+.w3view-cart:hover {
+	background-color: #d24456;
+}
+
+.w3view-cart:active,
+.w3view-cart:focus {
+  text-decoration: none;
 }
 
 .w3view-cart .count {
@@ -6243,4 +6252,19 @@ td.invert-image a img {
   color: white;
 }
 
-/*# sourceMappingURL=my.css.map */
+.minicart-box {
+  position: fixed;
+	top: 30px;
+  right: 170px;
+}
+.minicart-box__content {
+  position: absolute;
+  top: 60px;
+  left: -90px;
+  display: none;
+  width: 240px;
+  padding: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, .4);
+  background-color: white;
+  border-radius: 6px;
+}

@@ -22,7 +22,6 @@
 <!-- header -->
 <div class="header" id="home1">
     <div class="container">
-<<<<<<< HEAD
         <?php
         /**
          * action header-parts
@@ -33,9 +32,6 @@
          *
          */
         do_action('header-parts'); ?>
-=======
-		<?php do_action( 'header-parts' ); ?>
->>>>>>> 5d0c5da666629875efa70631dbb0efe083122ce8
     </div>
 </div>
 <!-- //header -->
