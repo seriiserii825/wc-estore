@@ -10,4 +10,5 @@ require_once __DIR__ . '/inc/bs-widgets.php';
 require_once __DIR__ . '/inc/bs-styles.php';
 require_once __DIR__ . '/inc/bs-settings.php';
 require_once __DIR__ . '/inc/navigation.php';
+require_once __DIR__ . '/woocommerce/includes/wc-functions.php';
 get_template_part('inc/ajax-search');
