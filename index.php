@@ -12,7 +12,7 @@
 <div class="banner-bottom">
     <div class="container">
         <div class="col-md-5 wthree_banner_bottom_left">
-            <div class="video-img">
+            <div class="video-img your-element">
                 <a class="play-icon popup-with-zoom-anim" href="#small-dialog">
                     <span class="glyphicon glyphicon-expand" aria-hidden="true"></span>
                 </a>
@@ -1258,7 +1258,7 @@
                         </h4>
                     </div>
                 </div>
-                <div class="wmuSlider example1">
+                <div class="wmuSlider example1 your-element">
                     <div class="wmuSliderWrapper">
                         <article style="position: absolute; width: 100%; opacity: 0;">
                             <div class="banner-wrap">

@@ -1,4 +1,5 @@
 (function ($) {
+
 	$(window).load(function () {
 		$("#flexiselDemo1").flexisel({
 			visibleItems: 4,
@@ -25,6 +26,11 @@
 
 	});
 	jQuery(document).ready(function ($) {
+
+		VanillaTilt.init(document.querySelector(".your-element"), {
+			max: 25,
+			speed: 800
+		});
 
 		$('.popup-with-zoom-anim').magnificPopup({
 			type: 'inline',
