@@ -11,4 +11,6 @@ require_once __DIR__ . '/inc/bs-styles.php';
 require_once __DIR__ . '/inc/bs-settings.php';
 require_once __DIR__ . '/inc/navigation.php';
 require_once __DIR__ . '/woocommerce/includes/wc-functions.php';
+require_once __DIR__ . '/woocommerce/includes/wc-hooks.php';
 get_template_part('inc/ajax-search');
+add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );

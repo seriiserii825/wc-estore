@@ -5606,4 +5606,25 @@ td.invert-image a img {
   margin-bottom: 40px;
 }
 
+.single-product-block .product_title {
+  margin-bottom: 20px;
+}
+
+.cart .qib-container .minus.qib-button {
+  height: 40px !important;
+  line-height: 24px !important;
+  width: 40px !important;
+  margin-right: 3px !important;
+  display: inline-block !important;
+  cursor: pointer !important;
+  position: relative !important;
+  font-size: 18px !important;
+  color: #fff !important;
+  text-align: center !important;
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  border: 1px solid #b2b2b2 !important;
+  vertical-align: bottom !important;
+}
+
 /*# sourceMappingURL=my.css.map */
