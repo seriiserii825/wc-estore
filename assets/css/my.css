@@ -18,6 +18,16 @@ ul, ol {
   display: none;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:focus, a:visited, a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
 /*-- header --*/
 input[type=submit], .panel-body ul li a, .checkout-right-basket a, .additional_info_sub_grid_right a, .panel_bottom li a, .panel-title a, .breadcrumb_dress ul li a, .multi-column-dropdown li a, .footer-copy p a, .w3_footer_grid ul li a, .agileinfo_banner_bottom1_grid_left a, .navbar-default .navbar-nav > li > a, .simpleCart_shelfItem p a, .agile_ecommerce_tab_left h5 a, .w3_hs_bottom ul li a, .team-bottom a {
   transition: 0.5s ease-in-out;
@@ -5637,6 +5647,7 @@ td.invert-image a img {
 .variations tr {
   display: flex;
   align-items: center;
+  margin-bottom: 10px;
 }
 
 .variations tr .label {
@@ -5656,6 +5667,10 @@ td.invert-image a img {
   border: none;
 }
 
+.variations {
+  margin-bottom: 30px;
+}
+
 .variations .tawcvs-swatches {
   display: flex;
   padding: 0;
@@ -5665,6 +5680,21 @@ td.invert-image a img {
 
 .variations .tawcvs-swatches span {
   display: block;
+}
+
+.resp-tab-item {
+  transition: all .3s;
+}
+
+.resp-tab-item:hover, .resp-tab-item.active {
+  text-shadow: none;
+  color: #fff;
+  background: #3c43a4;
+  border-color: #3c43a4;
+}
+
+.quantity .screen-reader-text {
+  display: none;
 }
 
 /*# sourceMappingURL=my.css.map */

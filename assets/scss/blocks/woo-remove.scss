@@ -31,6 +31,7 @@
 .variations tr {
   display: flex;
   align-items: center;
+  margin-bottom: 10px;
   .label {
     font-family: Glegoo, serif;
     font-size: 16px;
@@ -49,6 +50,7 @@
   }
 }
 .variations {
+  margin-bottom: 30px;
   .tawcvs-swatches {
     display: flex;
     padding: 0;
@@ -60,4 +62,18 @@
     display: block;
   }
   
+}
+
+.resp-tab-item {
+  transition: all .3s;
+  &:hover,
+  &.active {
+    text-shadow: none;
+    color: #fff;
+    background: #3c43a4;
+    border-color: #3c43a4;
+  }
+}
+.quantity .screen-reader-text {
+  display: none;
 }
